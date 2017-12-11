@@ -18,7 +18,7 @@ public class LoginPage extends BasePage {
     WebElement login;
 
     @FindBy(xpath = "//*[@id=\"ContentPanel\"]/form/div[1]/div/div/div[1]/strong")
-    private WebElement massage;
+    private WebElement message;
 
     public LoginPage(WebDriver driver) {
         super(driver);
@@ -41,8 +41,8 @@ public class LoginPage extends BasePage {
         return new HomePage(driver);
     }
 
-    public boolean isNotifictionEnable(){return massage.isEnabled(); }
-    public String getNotificationMassage() {return  massage.getText(); }
+    public boolean isNotifictionEnable(){return message.isEnabled(); }
+    public String getNotificationMassage() {return  message.getText(); }
 
 }
 

@@ -21,7 +21,7 @@ public class RouteTest extends DriverTest {
     private static final String EXPECTED_SWAP = "Manchester (Any) to London (Any)";
 
 
-    @Test (priority = 0)
+    @Test (priority = 1)
     public void oneWayRouteLondonManchesterToday(){
         driver.get(PATH);
 
@@ -29,12 +29,13 @@ public class RouteTest extends DriverTest {
         assertTrue(routePage.isInitialized());
 
         routePage.enterRoute(ORIGIN_STATION, DESTINATION_STATION);
+        routePage.setOneWayRatioTicket();
         routePage.submit();
 
         assertEquals(TODAY_EXPECTED_DATE, routePage.confirmationOneWayTitle());
     }
 
-    @Test (priority = 1)
+    @Test (priority = 0)
     public void returnRouteLondonManchesterToday(){
         driver.get(PATH);
 

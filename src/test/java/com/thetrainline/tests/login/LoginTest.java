@@ -14,8 +14,8 @@ public class LoginTest extends DriverTest {
     private static final String USER_VALID_EMAIL = "dowi@p33.org";
     private static final String USER_VALID_PASSWORD = "dowi@p33.org";
     private static final String USER_INVALID_EMAIL = "ifwifub@gmail.com";
-    private static final String LOGIN_FAILED_EXPECTED_MASSAGE = "Unable to sign in:";
-    private static final String LOGIN_EXPECTED_MASSAGE = "Sign out";
+    private static final String LOGIN_FAILED_EXPECTED_MESSAGE = "Unable to sign in:";
+    private static final String LOGIN_EXPECTED_MESSAGE = "Sign out";
 
     @Test(priority = 0)
     public void loginFailed(){
@@ -29,7 +29,7 @@ public class LoginTest extends DriverTest {
         loginPage.submit();
         assertTrue(loginPage.isNotifictionEnable());
 
-        assertEquals(LOGIN_FAILED_EXPECTED_MASSAGE, loginPage.getNotificationMassage());
+        assertEquals(LOGIN_FAILED_EXPECTED_MESSAGE, loginPage.getNotificationMassage());
     }
 
     @Test (priority = 1)
@@ -44,7 +44,7 @@ public class LoginTest extends DriverTest {
         HomePage homePage = loginPage.submit();
         assertTrue(homePage.isPageOpened());
 
-        assertEquals(LOGIN_EXPECTED_MASSAGE, homePage.confirmationTitle());
+        assertEquals(LOGIN_EXPECTED_MESSAGE, homePage.confirmationTitle());
     }
 
 }

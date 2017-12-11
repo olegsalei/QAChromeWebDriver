@@ -15,11 +15,14 @@ public class RoutePage extends BasePage {
     @FindBy(id = "submitButton")
     WebElement submitButton;
 
-    @FindBy(className = "matrix-date")
+    @FindBy(xpath = "//*[@id=\"tickets\"]/div/div[1]/table/thead/tr[1]/th[2]/div/h3")
     WebElement message;
 
-    @FindBy(xpath = "//*[@id=\"journey-type-return\"]")
+    @FindBy(id = "journey-type-return")
     WebElement returnRatio;
+
+    @FindBy(id = "journey-type-single")
+    WebElement oneWayRatio;
 
     @FindBy(xpath = "//*[@id=\"extendedSearchForm\"]/div[3]/div[2]/div/div[1]/button[2]")
     WebElement nextDay;
@@ -63,7 +66,12 @@ public class RoutePage extends BasePage {
         nextDay.click();
     }
 
-    private void today(){
+    public void setOneWayRatioTicket() {
+        today();
+        oneWayRatio.click();
+    }
+
+    public void today(){
         today.click();
     }
 

@@ -22,10 +22,10 @@ public class DeparturesPage extends BasePage{
     @FindBy(xpath = "//*[@id=\"app\"]/div/div[1]/div[2]/div/div/div[3]/div[2]/div[3]/div/div[1]/div[2]/h3")
     WebElement swapText;
 
-    @FindBy(xpath = "//*[@id=\"radioArrivals\"]")
+    @FindBy(id = "radioArrivals")
     WebElement radioArrivals;
 
-    @FindBy(xpath = "//*[@id=\"radioDepartures\"]")
+    @FindBy(xpath = "radioDepartures")
     WebElement radioDepartures;
 
     @FindBy(xpath = "//*[@id=\"app\"]/div/div[1]/div[2]/div/div/div[1]/h1/span")
